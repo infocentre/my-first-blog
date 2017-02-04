@@ -1,3 +1,284 @@
-a {
-    color: #FCA205; font-size: 1.2em;
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+/*제주고딕*/
+@import url('http://fonts.googleapis.com/earlyaccess/jejugothic.css');
+/*font-family: 'Jeju Gothic', serif;*/
+
+/*나눔 손글씨 펜*/
+@import url('http://fonts.googleapis.com/earlyaccess/nanumpenscript.css');
+/* font-family: 'Nanum Pen Script', serif; */
+
+/*애니메이트*/
+.navbar {
+  -moz-animation-duration: 1s;
+  -webkit-animation-duration: .5s;
+
+}
+
+
+.navbar-default{
+  background-image: -webkit-linear-gradient(top,#474747 0,#474747 100%);
+  /*none 이라는게 있었음*/
+  border: none;
+  margin-bottom: 0;
+  border-radius: 0;
+}
+.logo{
+  width:100px;
+  height:80px;
+  padding:5px 5px;
+  background-color: #0d6d45;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+  color:#fff;
+}
+
+.navbar-brand,
+.navbar-nav li a {
+  height:80px;
+  /*라인 헤이트도 높이와 같이 커져야함*/
+  line-height: 80px;
+  padding:0 25px;
+
+  background-color: #474747;
+  font-family: 'Oswald',sans-serif;
+  font-size:1.3em;
+  color:#fff;
+  /*입체감을 주기 위해서*/
+  /*어두운 라인 옆 약간 밝은라인으로 홈이 파여 반사하는 느낌*/
+  border-right:1px solid #393939;
+  margin-left: 1px;
+  -webkit-box-shadow: 1px 0px 0px 0px rgba(255,255,255,0.1);
+  -moz-box-shadow: 1px 0px 0px 0px rgba(255,255,255,0.1);
+  box-shadow: 1px 0px 0px 0px rgba(255,255,255,0.1);
+}
+.navbar-default .navbar-toggle{ margin-top:25px; border-color:#646464}
+.navbar-brand { padding-right:0;}
+.navbar-default .navbar-nav>li>a{color:#fff;}
+.navbar-default .navbar-nav>li>a:hover {color:#fff; background-color:#535252 }
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+  color:#fff;
+  background-image: -webkit-linear-gradient(top,#535252 0,#535252 100%);
+}
+/*소셜아이콘*/
+li.twitter a{
+  width: 80px;
+  background-color: #5ea9dd !important;
+  color: #fff !important;
+  font-size:1.8em;
+  line-height: 80px;
+  text-align:center;
+  box-shadow:none;
+  border-right:none;
+
+}
+li.facebook a{
+  width: 80px;
+  background-color: #3b5998 !important;
+  color: #fff !important;
+  font-size:1.8em;
+  line-height: 80px;
+  text-align:center;
+  box-shadow:none;
+  border-right:none;
+
+}
+.fa{
+  position: relative;
+  bottom: -25;
+}
+li.twitter a:hover,
+li.facebook a:hover{
+  opacity: 0.8
+}
+
+
+header{
+  height:600px;
+  text-align:center;
+  background-color: #6d6d6d;
+  padding-top:20px;
+  background:url(../img/background_pic.jpg);
+  background-attachment:fixed;
+}
+
+.login-info{
+  text-align:right;
+  color:#fff;
+  font-size: 1.2em;
+}
+
+.login-info a{
+  color:#fff;
+  padding:0 3px;
+}
+.login-info a:hover{
+  color:#ddd;
+  padding:0 3px;
+  text-decoration: none;
+}
+
+.profile-picture{
+  margin-top: 100px;
+  border:10px solid #807171;
+  -webkit-box-shadow: 0px 15px 37px -8px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 15px 37px -8px rgba(0,0,0,1);
+  box-shadow: 0px 15px 37px -8px rgba(0,0,0,1);
+}
+header h2{
+  margin-top:50px;
+  font-size:3em;
+  color:#474747;
+  font-family: 'Oswald',sans-serif;
+}
+
+header p{
+  padding:0 20px;
+  font-size:1.3em;
+  color:#474747;
+  font-family: 'Jeju Gothic', serif;
+}
+
+/* main content*/
+.main-content{
+  padding:50px;
+}
+.main-content h3{
+  /*인라인 블럭과 패딩으로 상자 만듬*/
+  padding:15px 30px;
+  display: inline-block;
+  font-size:1.5em;
+  color:#5d5d5d;
+  border:3px solid  #5d5d5d;
+  margin-bottom: 40px;
+}
+.main-content h4{
+
+  font-size:1.5em;
+  font-family: 'Oswald',sans-serif;
+  padding-right:15px;
+}
+.main-content h4 small{
+  color:#a0a0a0;
+  font-size:0.6em;
+
+}
+.main-content .about-me p{
+  color:#a0a0a0;
+  font-size:1.2em;
+  line-height: 1.7em;
+}
+
+/*블로그 css*/
+.post-box{
+  text-align: center;
+  padding:20px;
+
+}
+.post-box .post-title{
+  display: inline-block;
+  font-size: 2.1em;
+  color:#444;
+  font-family: 'Jeju Gothic', serif;
+  padding-bottom: 10px;
+}
+.post-box .date{
+padding-bottom: 20px;
+}
+
+/*contact*/
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: pink;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: pink;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: pink;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: pink;
+}
+
+
+input{
+  width:100%;
+  /*폼안에 있는 글자 뛰우는법*/
+  padding:0 20px;
+  height:50px;
+  color:#b9b9b9;
+  border:5px solid #b9b9b9;
+  margin-bottom:20px;
+  font-family:'Oswald',sans-serif;
+  font-size: 1.3em;
+
+}
+input:focus{
+  border:3px solid  #d559a8;
+  box-shadow:0 0 5px 1px #d559a8;
+}
+/*위에서 똑같이 적용시키고 별도로 클래스 추가하여 수정, 클래스개념*/
+.message{
+  height:220px;
+}
+.send{
+  width:250px;
+  background-color: #fff;
+}
+.send:hover{
+  color:#d559a8;
+  border-color:#d559a8;
+}
+.pull-left{
+  font-size:1.5em;
+  font-family: 'Oswald',sans-serif;
+}
+
+.contact-right-box{
+  
+  font-family:'Oswald',sans-serif;
+  font-size: 1.3em;
+}
+
+
+form p textarea{
+  width:100%;
+  /*폼안에 있는 글자 뛰우는법*/
+  padding:20 20px;
+  color:#b9b9b9;
+  border:5px solid #b9b9b9;
+  margin-bottom:20px;
+  font-family:'Oswald',sans-serif;
+  font-size: 1.3em;
+}
+
+/*footer*/
+footer{
+  width:100%;
+  height:200px;
+  background-color: #262626;
+  color:#fff;
+  padding-top:50px;
+}
+
+@media (max-width:768px){
+  /*먼저 큰화면을 구성한 뒤, 이미 만들어 진 클래스들을 수정*/
+  li.facebook a,li.twitter a, .navbar-default .navbar-nav>li>a{
+    width:100%;
+    border-bottom: 1px solid #3d3d3d;
+    text-align:center;
+  }
+  header h2{
+    margin-top:50px;
+    font-size:2.5em;
+    color:#fff;
+    font-family: 'Oswald',sans-serif;
+  }
+
+  header p{
+    padding:0 20px;
+    font-size:1.2em;
+    color:#fff;
+    font-family: 'Jeju Gothic', serif;
+  }
 }

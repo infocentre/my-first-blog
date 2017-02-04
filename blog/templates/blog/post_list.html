@@ -1,14 +1,74 @@
 {% extends 'blog/base.html' %}
 
 {% block main %}
-  {% for post in posts %}
-      <div class="post">
-          <div class="date">
-              {{ post.published_date }}
+
+  <div class="row">
+    <!-- about me -->
+    <div class="about-me">
+      <a name="about"></a>
+      <h3 >About me</h3>
+      <h4>Sean kim <small>Python developer and web publisher </small></h4>
+      <p>인도비즈니스학과라는 독특한 학과를 졸업. 컴퓨터에 관심이 많아 재학중에도 컴퓨터학과 C언어, AVR 수업을 듣고 좋은 성적을 받아 기뻐하기도 하였다.
+        2016년 3개월간의 비즈니스대학원 교환학생 당시 Software project management 수업과 Ecommerce 수업을 특별히 골라 들었으며, 인도 IT Outsorcing 업체인 UST 글로벌에서 1달간 인턴 후 LG soft india 채용에 지원했지만
+        아슬아슬하게 떨어졌다는 전설이 있다. 2017년 1월 파이썬의 간결한 아름다움과 실용적임에 빠져들어 파이썬 개발자가 되는 소림사보다 빡~센 훈련을 하고 있다.
+      </p>
+    </div>
+  </div>
+  <hr>
+    <!-- /about me -->
+
+
+
+  <!-- blog -->
+  <div class="blog">
+    <a name="blog"></a>
+    <h3>Blog</h3>
+    <div class="row">
+      {% for post in posts %}
+
+          <div class="col-md-6">
+            <div class="post-box ">
+              <!-- 이미지 사용시 -->
+              <!-- <img src="#" alt="" class="img-risponsive"> -->
+              <a href="{% url 'post_detail' pk=post.pk %}" class="post-title">{{ post.title }}</a>
+              <div class="date">{{ post.published_date }}</div>
+
+              <p>{{ post.text|linebreaksbr }}</p>
+              Comments: {{ post.approved_comment.count }}
+            </div>
           </div>
-          <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-          <p>{{ post.text|linebreaksbr }}</p>
-          Comments: {{ post.approved_comment.count }}
+      {% endfor %}
+    </div>
+  </div>
+  <hr>
+  <!-- /blog -->
+
+
+
+
+
+
+  <!-- contact-info -->
+  <a name="contact"></a>
+  <h3>Contact info</h3>
+  <div class="row">
+    <div class="col-md-9">
+      <form action="mailto:infocentre@naver.com" method="post">
+        <input type="text" name="fullname" placeholder="Name" >
+        <br>
+        <input type="email" name="email" placeholder="email address">
+        <br>
+        <input type="text" name="message" placeholder="message" class="message">
+        <br>
+        <input type="submit" value="send messages" class="send">
+      </form>
+    </div>
+    <div class="col-md-3">
+      <div class="contact-right-box">
+        <div><span class="glyphicon glyphicon-earphone"></span> 010.5442.1580</div>
+        <div><span class="glyphicon glyphicon-envelope"></span> infocentre@naver.com</div>
       </div>
-  {% endfor %}
+    </div>
+  </div>
+  <!-- /contact-info -->
 {% endblock %}
