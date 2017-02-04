@@ -229,13 +229,10 @@ input:focus{
   color:#d559a8;
   border-color:#d559a8;
 }
-.pull-left{
-  font-size:1.5em;
-  font-family: 'Oswald',sans-serif;
-}
+
 
 .contact-right-box{
-  
+
   font-family:'Oswald',sans-serif;
   font-size: 1.3em;
 }
@@ -259,6 +256,11 @@ footer{
   background-color: #262626;
   color:#fff;
   padding-top:50px;
+  font-size: 1.4em;
+  font-family: 'Oswald',sans-serif;
+}
+footer .pull-right{
+  text-align: right;
 }
 
 @media (max-width:768px){
@@ -281,4 +283,23 @@ footer{
     color:#fff;
     font-family: 'Jeju Gothic', serif;
   }
+}
+.login-button{
+  width:350px;
+}
+.login-box{
+  text-align: center;
+}
+.login-box .login-title{
+  font-family: 'Jeju Gothic', serif;
+  font-size:2.5em;
+}
+.login-box label{
+  font-family: 'Oswald',sans-serif;
+  font-size:1.5em;
+}
+.login-box input{
+  line-height: 10px;
+  width:350px;
+
 }
