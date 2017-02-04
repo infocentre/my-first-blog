@@ -53,7 +53,9 @@
   <h3>Contact info</h3>
   <div class="row">
     <div class="col-md-9">
-      <form action="mailto:infocentre@naver.com" method="post">
+      <form action="{% url 'post_list' %}" method="post">
+        <!-- 토큰체크 -->
+        {% csrf_token %}
         <input type="text" name="fullname" placeholder="Name" >
         <br>
         <input type="email" name="email" placeholder="email address">

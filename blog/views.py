@@ -1,12 +1,20 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Post, Comment
+from .models import Post, Comment, Contact
 from .form import PostForm, CommentForm
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def post_list(request):
+    if request.method =="POST":
+        post = request.POST
+        email = post['email']
+        fullname = post['fullname']
+        message = post['message']
+        Contact.objects.create(name=fullname, email=email,message=message)
+        return redirect('post_list') #리턴하지 않으면 포스트를 전달하는 단에 머물게됨
+
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
 
     return render(request, 'blog/post_list.html', {'posts':posts})

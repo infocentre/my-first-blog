@@ -34,3 +34,12 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+
+class Contact(models.Model):
+    name = models.CharField(max_length=150)
+    email = models.CharField(max_length=200)
+    message = models.TextField()
+    sent_date = models.DateTimeField(default = timezone.now)
+
+    def __str__(self):
+        return self.name
