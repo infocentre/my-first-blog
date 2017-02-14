@@ -15,6 +15,9 @@
 
 }
 
+.margin-auto{
+  margin: 0 auto;
+}
 
 .navbar-default{
   background-image: -webkit-linear-gradient(top,#474747 0,#474747 100%);
@@ -72,9 +75,10 @@ li.twitter a{
   border-right:none;
 
 }
-li.facebook a{
+
+li.git a, li.facebook a{
   width: 80px;
-  background-color: #3b5998 !important;
+
   color: #fff !important;
   font-size:1.8em;
   line-height: 80px;
@@ -83,11 +87,18 @@ li.facebook a{
   border-right:none;
 
 }
+li.facebook a{
+  background-color: #3b5998 !important;
+}
+li.git a{
+  background-color: #000 !important;
+}
+
 .fa{
   position: relative;
   bottom: -25;
 }
-li.twitter a:hover,
+li.git a:hover,
 li.facebook a:hover{
   opacity: 0.8
 }

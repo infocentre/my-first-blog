@@ -10,7 +10,7 @@
       <h4>Sean kim <small>Python developer and web publisher </small></h4>
       <p>
         I gratuated from Young-san university, majaring india business. While i was in school, i attended to class related to computer science,
-        got quite good grade. 2016 in India, i worked as an intern in UST global, one of famous IT outsourced company in india for one month. I started to learn python to start life as a python developer. 
+        got quite good grade. 2016 in India, i worked as an intern in UST global, one of famous IT outsourced company in india for one month. I started to learn python to start life as a python developer.
       </p>
     </div>
   </div>
@@ -34,9 +34,9 @@
 
               <div class="date">{{ post.published_date }}</div>
               {% if post.image.url != null %}
-              <div><img src="{{post.image.url}}" alt="" class='img-responsive'></imag></div>
+              <p><img src="{{post.image.url}}" alt="" class='img-responsive margin-auto'></img></p>
               {% endif %}
-              <p>{{ post.text|linebreaksbr }}</p>
+              <p>{{ post.text|slice:":200"|linebreaksbr }}</p>
               Comments: {{ post.approved_comment.count }}
             </div>
           </div>
