@@ -5,14 +5,16 @@ from .form import PostForm, CommentForm
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 
+
 # Create your views here.
 def post_list(request):
     if request.method =="POST":
         post = request.POST
         email = post['email']
         fullname = post['fullname']
+        image = post['image']
         message = post['message']
-        Contact.objects.create(name=fullname, email=email,message=message)
+        Contact.objects.create(name=fullname, email=email,message=message,image=image)
         return redirect('post_list') #리턴하지 않으면 포스트를 전달하는 단에 머물게됨
 
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -27,7 +29,8 @@ def post_detail(request, pk):
 @login_required
 def post_new(request):
     if request.method =="POST":
-        form = PostForm(request.POST)
+        print(request.FILES)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit =False)
             post.author = request.user
@@ -42,7 +45,7 @@ def post_new(request):
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method =="POST":
-        form = PostForm(request.POST, instance = post )
+        form = PostForm(request.POST, request.FILES, instance = post )
         if form.is_valid():
             post = form.save(commit = False)
             post.author = request.user
