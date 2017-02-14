@@ -31,8 +31,11 @@
               <!-- 이미지 사용시 -->
               <!-- <img src="#" alt="" class="img-risponsive"> -->
               <a href="{% url 'post_detail' pk=post.pk %}" class="post-title">{{ post.title }}</a>
-              <div class="date">{{ post.published_date }}</div>
 
+              <div class="date">{{ post.published_date }}</div>
+              {% if post.image.url != null %}
+              <div><img src="{{post.image.url}}" alt="" class='img-responsive'></imag></div>
+              {% endif %}
               <p>{{ post.text|linebreaksbr }}</p>
               Comments: {{ post.approved_comment.count }}
             </div>
